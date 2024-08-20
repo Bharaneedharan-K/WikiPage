@@ -3,7 +3,7 @@ import React from 'react';
 const ReportPage = () => {
   return (
     <div>
-      <h2>Dashboard</h2>
+      <h2>AdminDashboard</h2>
     </div>
   );
 }
