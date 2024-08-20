@@ -1,21 +1,22 @@
 .admin-container {
   display: flex;
-  flex-direction: column; /* Stack top bar and main content vertically */
-  height: 100vh;
+  flex-direction: column; 
+  height: 100vh;  
+  overflow: hidden; 
 }
 
 .top-bar {
   width: 100%;
-  background-color: #081331; /* Dark background for top bar */
+  background-color: #081331;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Space between elements */
+  justify-content: space-between;
 }
 
 .sidebar-toggle {
-  background: transparent; /* Transparent background for button */
+  background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
@@ -25,8 +26,8 @@
 }
 
 .hamburger {
-  width: 24px; /* Width of the hamburger lines */
-  height: 18px; /* Height of the hamburger lines */
+  width: 24px;
+  height: 18px;
   position: relative;
 }
 
@@ -46,7 +47,7 @@
 }
 
 .hamburger div {
-  top: 7px; /* Space between lines */
+  top: 7px;
 }
 
 .hamburger::after {
@@ -68,23 +69,42 @@
 }
 
 .top-bar-title {
-  flex: 1; /* Take up remaining space */
-  text-align: center; /* Center the title */
-  color: #ffffff; /* White text color for top bar heading */
+  flex: 1;
+  text-align: center;
+  color: #ffffff;
   margin: 0;
+  padding-right: 30px; 
+}
+
+.logout-button {
+  background-color: #f44336; 
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px; 
+  margin-right: 45px; 
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; 
 }
 
 .main-content {
-  display: flex; /* Align sidebar and content side by side */
+  display: flex; 
   flex: 1;
-  transition: margin-left 0.3s; /* Smooth transition for sidebar toggle */
+  overflow: hidden; 
+  transition: margin-left 0.3s;
+  height: calc(100vh - 60px); 
 }
 
 .sidebar {
   width: 200px;
-  background-color: #f4f4f4; /* Light gray background for sidebar */
+  background-color: #081331;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  height: 100%; 
+  overflow-y: auto;
 }
 
 .sidebar-nav {
@@ -103,7 +123,7 @@
 .sidebar-nav-link {
   display: block;
   text-decoration: none;
-  color: #333; /* Default text color */
+  color: #c4c0c0;
   font-weight: bold;
   padding: 10px;
   border-radius: 4px;
@@ -111,17 +131,18 @@
 }
 
 .sidebar-nav-link:hover {
-  background-color: #007bff; /* Background color on hover */
-  color: rgb(181, 177, 177); /* Text color on hover */
+  background-color: #007bff;
+  color: rgb(181, 177, 177);
 }
 
 .sidebar-nav-link:active {
-  background-color: #0056b3; /* Background color when button is active */
+  background-color: #0056b3;
 }
 
 .content {
   flex: 1;
-  background-color: #cccacaf0; /* Light gray background for content area */
+  background-color: #cccacaf0;
   padding: 20px;
-  overflow-y: auto; /* Add scroll if content overflows */
+  overflow-y: auto;
+  height: 100%; 
 }
