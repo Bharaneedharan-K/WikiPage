@@ -1,0 +1,35 @@
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+    height: calc(100vh - 60px); /* Ensure it fits within the available window space */
+    box-sizing: border-box;
+  }
+  
+  .task-card {
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Applies blur to the background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Increased height */
+  }
+  
+  .task-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  .count-item {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

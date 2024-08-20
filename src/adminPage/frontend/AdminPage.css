@@ -146,3 +146,21 @@
   overflow-y: auto;
   height: 100%; 
 }
+
+
+.main-content {
+  display: flex; 
+  flex: 1;
+  overflow: hidden; 
+  transition: margin-left 0.3s;
+  height: calc(100vh - 60px); 
+  background-color: #495577; /* New background color for the main content area */
+}
+
+.content {
+  flex: 1;
+  background-color: #f0f0f0; /* New background color for the content inside the main content area */
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%; 
+}
