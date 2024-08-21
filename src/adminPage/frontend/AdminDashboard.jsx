@@ -7,7 +7,7 @@ const AdminDashboard = () => {
     { label: 'Total Number of Tasks', count: '25' },
     { label: 'Tasks Pending', count: '5' },
     { label: 'Requests', count: '3' },
-    { label: 'Tasks Completed', count: '18' },
+    { label: 'Tasks Completed', count: '17' },
   ];
 
   return (
