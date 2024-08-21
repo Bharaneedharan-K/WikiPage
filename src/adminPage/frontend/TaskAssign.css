@@ -1,0 +1,79 @@
+.form-container {
+    margin: 0 auto;
+    padding: 40px;
+    width: 100%; /* Make the container take the full width */
+    max-width: 100%; /* Allow it to stretch to the screen's full width */
+    background-color: rgba(42, 42, 42, 0); /* Fully transparent background */
+    border-radius: 10px;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  h1 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 24px; /* Increase the font size */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px; /* Restrict form content width */
+    margin: 0 auto; /* Center the form within the container */
+  }
+  
+  .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Optional: Adds space between label and input */
+  }
+  
+  label {
+    flex-basis: 30%;
+    font-weight: 600;
+    text-align: right; /* Align label text to the right */
+    margin-right: 10px; /* Adds space between label and input */
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    flex-grow: 1; /* Allows input to stretch fully to the right */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+    font-size: 16px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  input[type="text"]::placeholder,
+  input[type="date"]::placeholder {
+    color: #a9a9a9;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .assign-button {
+    padding: 12px 24px;
+    background-color: #0b84d7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .assign-button:hover {
+    background-color: #095ea8;
+  }
