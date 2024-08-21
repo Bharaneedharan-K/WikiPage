@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-ro
 import './AdminPage.css';
 
 import AdminDashboard from './AdminDashboard';
-import AssignPage from './AssignPage';
+import AssignPage from './FacultyAssign';
 import ReportPage from './ReportPage';
 import StatusPage from './StatusPage';
 import GenerateCodePage from './GenerateCodePage';
