@@ -106,7 +106,7 @@ const FacultyAssign = () => {
           />
         </div>
 
-        <div className="form-actions">
+        <div className="form-actions"><br></br>
           <button type="submit" className="assign-button">Assign Faculty</button>
         </div>
       </form>

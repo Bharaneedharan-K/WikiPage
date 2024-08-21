@@ -24,7 +24,7 @@ const TaskAssign = () => {
 
   return (
     <div className="form-container">
-      <h1>Assign Task</h1>
+      <h1>Assign Task</h1><br></br>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="department">Department *</label>
@@ -78,7 +78,7 @@ const TaskAssign = () => {
         </div>
 
         <div className="form-actions">
-          <button type="submit" className="assign-button">Assign Task</button>
+          <button type="submit" className="assign-task">Assign Task</button>
         </div>
       </form>
     </div>
