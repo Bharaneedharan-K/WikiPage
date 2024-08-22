@@ -23,8 +23,8 @@ const TaskAssign = () => {
   };
 
   return (
-    <div className="form-container">
-      <h1>Assign Task</h1><br></br>
+    <div className="task-assign-container">
+      <h1>Assign Task</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="department">Department *</label>

@@ -25,7 +25,7 @@ const FacultyAssign = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="faculty-assign-container">
       <h2>Assign Faculty</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
