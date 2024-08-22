@@ -6,10 +6,11 @@ import AdminDashboard from './AdminDashboard';
 import AssignPage from './FacultyAssign';
 import ReportPage from './TaskAssign';
 import RequestTask from './RequestTask';
-
 import StatusPage from './PendingTask';
 import CodeGenerate from './CodeGenerate';
 import LoginPage from './../../LoginPage.jsx';
+import LogoutButton from './LogoutButton'; // Import the new LogoutButton component
+
 const AdminPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
@@ -18,9 +19,7 @@ const AdminPage = () => {
   };
 
   const handleLogout = () => {
-    // Implement logout functionality here
-    console.log('Logging out...');
-    // Redirect to login page
+    // Implement additional logout functionality here if needed
   };
 
   return (
@@ -31,9 +30,7 @@ const AdminPage = () => {
             <div className={`hamburger ${sidebarVisible ? '' : 'active'}`} />
           </button>
           <h2 className="top-bar-title">BIT - Wiki Page Generation</h2>
-          <button className="logout-button" onClick={handleLogout}>
-            <i className="fas fa-sign-out-alt"></i> {/* Font Awesome logout icon */}
-          </button>
+          <LogoutButton onLogout={handleLogout} /> {/* Use the LogoutButton */}
         </div>
         <div className="main-content">
           {sidebarVisible && (
@@ -50,8 +47,8 @@ const AdminPage = () => {
                     <Link to="/admin/task" className="sidebar-nav-link">Task Assign</Link>
                   </li>
                   <li className="sidebar-nav-item">
-  <Link to="/admin/request-task" className="sidebar-nav-link">Request Task</Link>
-</li>
+                    <Link to="/admin/request-task" className="sidebar-nav-link">Request Task</Link>
+                  </li>
                   <li className="sidebar-nav-item">
                     <Link to="/admin/pending" className="sidebar-nav-link">Pending Task</Link>
                   </li>
