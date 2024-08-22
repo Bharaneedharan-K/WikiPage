@@ -4,10 +4,10 @@ import './AdminDashboard.css';
 const AdminDashboard = () => {
   // Data for tasks and their statuses
   const tasks = [
-    { label: 'Total Number of Tasks', count: '25' },
-    { label: 'Tasks Pending', count: '5' },
-    { label: 'Requests', count: '3' },
-    { label: 'Tasks Completed', count: '17' },
+    { label: 'Total Number of Task', count: '25' },
+    { label: 'Task Pending', count: '5' },
+    { label: 'Task Requests', count: '3' },
+    { label: 'Task Completed', count: '17' },
   ];
 
   return (

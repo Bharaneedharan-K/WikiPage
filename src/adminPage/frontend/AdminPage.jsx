@@ -5,6 +5,8 @@ import './AdminPage.css';
 import AdminDashboard from './AdminDashboard';
 import AssignPage from './FacultyAssign';
 import ReportPage from './TaskAssign';
+import RequestTask from './RequestTask';
+
 import StatusPage from './PendingTask';
 import GenerateCodePage from './GenerateCodePage';
 
@@ -47,6 +49,9 @@ const AdminPage = () => {
                     <Link to="/admin/task" className="sidebar-nav-link">Task Assign</Link>
                   </li>
                   <li className="sidebar-nav-item">
+  <Link to="/admin/request-task" className="sidebar-nav-link">Request Task</Link>
+</li>
+                  <li className="sidebar-nav-item">
                     <Link to="/admin/pending" className="sidebar-nav-link">Pending Task</Link>
                   </li>
                   <li className="sidebar-nav-item">
@@ -61,6 +66,7 @@ const AdminPage = () => {
               <Route path='/admin/dashboard' element={<AdminDashboard />} />
               <Route path='/admin/assign' element={<AssignPage />} />
               <Route path='/admin/task' element={<ReportPage />} />
+              <Route path='/admin/request-task' element={<RequestTask />} />
               <Route path='/admin/pending' element={<StatusPage />} />
               <Route path='/admin/generate-code' element={<GenerateCodePage />} />
               <Route path='*' element={<Navigate to='/admin/dashboard' />} /> {/* Redirect to dashboard by default */}
