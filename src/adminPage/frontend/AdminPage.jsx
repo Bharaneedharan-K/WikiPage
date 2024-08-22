@@ -9,7 +9,7 @@ import RequestTask from './RequestTask';
 import StatusPage from './PendingTask';
 import CodeGenerate from './CodeGenerate';
 import LoginPage from './../../LoginPage.jsx';
-import LogoutButton from './LogoutButton'; // Import the new LogoutButton component
+import LogoutButton from './LogoutButton'; // Import the new component
 
 const AdminPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);

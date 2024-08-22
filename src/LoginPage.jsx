@@ -41,6 +41,10 @@ const LoginPage = () => {
       </form>
     </div>
   );
-}
+};
+
+export const openLoginPage = () => {
+  window.open('/admin/login', '_blank', 'width=600,height=400');
+};
 
 export default LoginPage;
