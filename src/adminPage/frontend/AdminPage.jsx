@@ -8,8 +8,8 @@ import ReportPage from './TaskAssign';
 import RequestTask from './RequestTask';
 
 import StatusPage from './PendingTask';
-import GenerateCodePage from './GenerateCodePage';
-
+import CodeGenerate from './CodeGenerate';
+import LoginPage from './../../LoginPage.jsx';
 const AdminPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);
 
@@ -20,6 +20,7 @@ const AdminPage = () => {
   const handleLogout = () => {
     // Implement logout functionality here
     console.log('Logging out...');
+    // Redirect to login page
   };
 
   return (
@@ -68,7 +69,8 @@ const AdminPage = () => {
               <Route path='/admin/task' element={<ReportPage />} />
               <Route path='/admin/request-task' element={<RequestTask />} />
               <Route path='/admin/pending' element={<StatusPage />} />
-              <Route path='/admin/generate-code' element={<GenerateCodePage />} />
+              <Route path='/admin/generate-code' element={<CodeGenerate />} />
+              <Route path='/admin/login' element={<LoginPage />} />
               <Route path='*' element={<Navigate to='/admin/dashboard' />} /> {/* Redirect to dashboard by default */}
             </Routes>
           </div>

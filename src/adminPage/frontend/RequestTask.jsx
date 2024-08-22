@@ -115,8 +115,8 @@ const RequestTask = () => {
       <table className="request-task-table">
         <thead>
           <tr>
-            <th>Faculty Name with ID</th>
-            <th>Subject Name with Code</th>
+            <th>Name</th>
+            <th>Subject Code</th>
             <th>Unit Number</th>
             <th>Topic</th>
             <th>Lecture Material</th>
