@@ -1,0 +1,61 @@
+/* LoginPage.css */
+.login-page {
+    background-color: #1a1d36; /* Dark blue background color */
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-container {
+    background-color: #2e3149; /* Slightly lighter blue for the container */
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .welcome-text {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .login-logo {
+    width: 100px; /* Adjust logo size as needed */
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .divider {
+    width: 80%;
+    margin: 0 auto;
+    border: 0.5px solid white;
+    margin-bottom: 20px;
+  }
+  
+  .google-sign-in {
+    background-color: #1e7e34; /* Blue button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .google-sign-in:hover {
+    background-color: #155d27; /* Darker blue on hover */
+  }
+  
+  .sign-in-text {
+    color: #bdbdbd; /* Light gray text */
+    font-size: 12px;
+  }
+  
