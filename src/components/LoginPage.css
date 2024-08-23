@@ -22,7 +22,9 @@
   }
   
   .login-logo {
-    width: 100px; /* Adjust logo size as needed */
+    width: 250px; /* Adjust logo size as needed */
+    height: 200px;
+  
     margin-bottom: 20px;
   }
   
@@ -59,3 +61,29 @@
     font-size: 12px;
   }
   
+  .button-container {
+    position: absolute;
+    right: 20px; /* Distance from the right edge */
+    top: 20px; /* Distance from the top edge */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .admin-page-button,
+  .faculty-page-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px; /* Adjust width as needed */
+    border-radius: 5px;
+  }
+  
+  .admin-page-button:hover,
+  .faculty-page-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
