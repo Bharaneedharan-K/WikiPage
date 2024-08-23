@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-import AdminPage from './adminPage/frontend/AdminPage';
-import LoginPage from './LoginPage'; // Adjust the import path accordingly
+import AdminPage from './components/adminPage/frontend/AdminPage';
+import LoginPage from './components/LoginPage'; // Adjust the import path accordingly
 
 function App() {
   return (
