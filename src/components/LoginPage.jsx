@@ -11,7 +11,7 @@ const LoginPage = () => {
   };
 
   const handleFacultyPageClick = () => {
-    navigate('/faculty'); // Use navigate to go to the Faculty Page
+    navigate('/faculty/dashboard'); // Correct path to go to the Faculty Page
   };
 
   return (

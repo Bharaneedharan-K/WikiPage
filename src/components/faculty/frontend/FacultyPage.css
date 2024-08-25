@@ -1,1 +1,155 @@
-body {background-color: rgb(255, 68, 0);}
+/* FacultyPage.css */
+
+/* General Styling */
+.faculty-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.faculty-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Adjust color to your theme */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-top-bar-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Sidebar Styling */
+.faculty-sidebar {
+  width: 250px;
+  background-color: #2E7D32; /* Adjust color to your theme */
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 60px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+  z-index: 1000; /* Ensure sidebar is above main content */
+}
+
+.faculty-sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.faculty-sidebar-nav-list {
+  padding: 0;
+}
+
+.faculty-sidebar-nav-item {
+  margin-bottom: 20px;
+}
+
+.faculty-sidebar-nav-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.faculty-sidebar-nav-link:hover {
+  background-color: #1B5E20; /* Adjust hover color */
+}
+
+/* Hide sidebar when not visible */
+.faculty-sidebar-toggle {
+  display: none; /* Hide by default */
+}
+
+/* Hamburger Button Styling */
+.faculty-sidebar-toggle {
+  display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.faculty-hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.faculty-hamburger:before,
+.faculty-hamburger:after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.faculty-hamburger:before {
+  top: -8px;
+}
+
+.faculty-hamburger:after {
+  bottom: -8px;
+}
+
+.faculty-hamburger.active {
+  background-color: transparent;
+}
+
+.faculty-hamburger.active:before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.faculty-hamburger.active:after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+/* Main Content Styling */
+.faculty-main-content {
+  margin-left: 250px; /* Adjust to sidebar width */
+  padding: 20px;
+  flex-grow: 1;
+  background-color: #f5f5f5; /* Adjust background color */
+  overflow-y: auto; /* Enable scrolling */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.faculty-dashboard-content {
+  padding: 20px;
+  background-color: white; /* Content background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faculty-sidebar {
+    transform: translateX(-100%); /* Hide sidebar on small screens */
+  }
+
+  .faculty-sidebar-toggle {
+    display: inline-block; /* Show toggle button on small screens */
+  }
+
+  .faculty-main-content {
+    margin-left: 0; /* Adjust for hidden sidebar */
+  }
+
+  .faculty-sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}

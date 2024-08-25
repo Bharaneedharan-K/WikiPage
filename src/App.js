@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import AdminPage from './components/adminPage/frontend/AdminPage';
 import FacultyPage from './components/faculty/frontend/FacultyPage';
-import LoginPage from './components/LoginPage'; // Adjust the import path if needed
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
@@ -17,12 +17,15 @@ function App() {
           
           {/* Route for the admin dashboard and other admin-related pages */}
           <Route path="/admin/*" element={<AdminPage />} />
-          
-          {/* Route for the faculty page */}
-          <Route path="/faculty" element={<FacultyPage />} />
 
-          {/* Redirect to the admin login page if no other routes match */}
-          <Route path="*" element={<Navigate to="/admin/login" />} />
+          {/* Route for the faculty page */}
+          <Route path="/faculty/*" element={<FacultyPage />} />
+
+          {/* Default route redirect: Could redirect to login or homepage */}
+          <Route path="/" element={<Navigate to="/admin/login" />} />
+
+          {/* Fallback route if no other routes match */}
+          <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
       </div>
     </Router>

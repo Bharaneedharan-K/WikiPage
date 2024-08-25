@@ -9,7 +9,7 @@ import ReportPage from './TaskAssign';
 import RequestTask from './RequestTask';
 import StatusPage from './PendingTask';
 import CodeGenerate from './CodeGenerate';
-import LogoutButton from './LogoutButton';
+import LogoutButton from '../../LogoutButton';
 
 const AdminPage = () => {
   const [sidebarVisible, setSidebarVisible] = useState(true);

@@ -1,0 +1,35 @@
+/* FacultyDashboard.css */
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between the cards */
+    padding: 20px;
+  }
+  
+  .task-card {
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+  }
+  
+  .task-card h3 {
+    font-size: 18px;
+    color: #333; /* Darker text for the label */
+  }
+  
+  .count-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 10px 0 0;
+  }
+  
+  .count-item {
+    font-size: 24px; /* Larger font for the count */
+    font-weight: bold;
+    color: #007bff; /* Blue color for count */
+  }
+  
