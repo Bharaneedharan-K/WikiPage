@@ -17,8 +17,6 @@ const FacultyPage = () => {
   };
 
   const handleLogout = () => {
-    // Implement additional logout functionality here if needed
-    // For example, clear authentication tokens or perform API logout request
     console.log("Logout successful.");
   };
 
@@ -34,7 +32,7 @@ const FacultyPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="faculty-main-content">
+      <div className={`faculty-main-content ${sidebarVisible ? '' : 'expanded'}`}>
         {/* Sidebar */}
         {sidebarVisible && (
           <div className="faculty-sidebar">
@@ -68,7 +66,6 @@ const FacultyPage = () => {
             <Route path="upload" element={<FacultyUpload />} />
             <Route path="status" element={<FacultyStatus />} />
             <Route path="overview" element={<FacultyOverview />} />
-            {/* Redirect any unmatched routes to the dashboard */}
             <Route path="*" element={<Navigate to="/faculty/dashboard" replace />} />
           </Routes>
         </div>
@@ -78,3 +75,4 @@ const FacultyPage = () => {
 };
 
 export default FacultyPage;
+  
