@@ -2,7 +2,6 @@ import React from 'react';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
-  // Data for tasks and their statuses
   const tasks = [
     { label: 'Total Number of Task', count: '25' },
     { label: 'Task Pending', count: '5' },

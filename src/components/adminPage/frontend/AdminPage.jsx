@@ -1,6 +1,5 @@
-// AdminPage.js
 import React, { useState } from 'react';
-import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import './AdminPage.css';
 
 import AdminDashboard from './AdminDashboard';
@@ -19,7 +18,6 @@ const AdminPage = () => {
   };
 
   const handleLogout = () => {
-    // Implement additional logout functionality here if needed
   };
 
   return (

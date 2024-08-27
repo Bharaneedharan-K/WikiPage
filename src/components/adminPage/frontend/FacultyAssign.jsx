@@ -20,7 +20,6 @@ const FacultyAssign = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement form submission logic here
     console.log('Form submitted:', formData);
   };
 

@@ -1,10 +1,10 @@
 .dashboard-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns */
-  grid-template-rows: 1fr 1fr; /* 2 rows */
-  gap: 35px; /* Space between the cards */
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 35px; 
   height: 90%;
-  width: 140%; /* Increase the container's width */
+  width: 140%; 
   padding: 20px;
 }
 
@@ -18,12 +18,12 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 20px; /* Increase space at the top of the card */
+  margin-top: 20px; 
   margin-left: 20px;
 }
 
 .task-card h3 {
-  font-size: 2em; /* Increase font size for the task labels */
+  font-size: 2em; 
   margin: 0 0 10px 0;
   color: #333;
 }
@@ -35,7 +35,7 @@
 }
 
 .count-item {
-  font-size: 2em; /* Font size for the count */
+  font-size: 2em; 
   font-weight: bold;
   color: #333;
 }

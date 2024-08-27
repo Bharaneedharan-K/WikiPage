@@ -50,7 +50,7 @@
   }
   
   .filter-container input[type="date"] {
-    padding-right: 16px; /* Give some extra padding for the date input */
+    padding-right: 16px; 
   }
   
   .reset-button {

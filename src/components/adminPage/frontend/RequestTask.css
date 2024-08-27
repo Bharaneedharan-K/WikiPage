@@ -64,7 +64,7 @@
 }
 
 .request-task-table button:first-child {
-  background-color: #4caf50; /* Green for approve */
+  background-color: #4caf50;
 }
 
 .request-task-table button:first-child:hover {
@@ -72,7 +72,7 @@
 }
 
 .request-task-table button:last-child {
-  background-color: #f44336; /* Red for reject */
+  background-color: #f44336; 
 }
 
 .request-task-table button:last-child:hover {

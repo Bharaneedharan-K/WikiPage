@@ -1,11 +1,10 @@
-/* TaskAssign.css */
 
 .task-assign-container {
   margin: 0 auto;
   padding: 40px;
-  width: 100%; /* Full width of the container */
-  max-width: 1200px; /* Restrict to a maximum width */
-  background-color: rgba(42, 42, 42, 0); /* Fully transparent background */
+  width: 100%; 
+  max-width: 1200px; 
+  background-color: rgba(42, 42, 42, 0); 
   border-radius: 10px;
   color: #ffffff;
   position: relative;
@@ -13,7 +12,7 @@
 
 .task-assign-container h1 {
   text-align: left; 
-  margin-bottom: 50px; /* Consistent spacing with FacultyAssign */
+  margin-bottom: 50px;
   margin-top: 10px;
   color: #ffffff;
   font-size: 32px; 
@@ -23,27 +22,27 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Full width within the container */
+  width: 100%; 
 }
 
 .task-assign-container .form-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px; /* Space between label and input */
+  gap: 20px;
 }
 
 .task-assign-container label {
   flex-basis: 30%;
   font-weight: 600;
-  text-align: right; /* Align label text to the right */
-  margin-right: 10px; /* Space between label and input */
-  width: 500px; /* Consistent width with FacultyAssign */
+  text-align: right; 
+  margin-right: 10px; 
+  width: 500px; 
 }
 
 .task-assign-container input[type="text"],
 .task-assign-container input[type="date"] {
-  flex-grow: 1; /* Allows input to stretch fully to the right */
+  flex-grow: 1; 
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -60,7 +59,7 @@
 .task-assign-container .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px; /* Added margin to separate from form elements */
+  margin-top: 20px; 
 }
 
 .task-assign-container .assign-task {

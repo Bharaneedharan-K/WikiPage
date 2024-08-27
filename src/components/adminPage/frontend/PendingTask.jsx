@@ -3,11 +3,11 @@ import './PendingTask.css';
 
 const PendingTask = () => {
   const initialTasks = [
-    { id: 1, facultyId: 'FAC123', facultyName: 'John Doe', subjectId: 'SUB101', dueDate: '2024-09-15' },
-    { id: 2, facultyId: 'FAC456', facultyName: 'Jane Smith', subjectId: 'SUB102', dueDate: '2024-09-20' },
-    { id: 3, facultyId: 'FAC789', facultyName: 'Alice Johnson', subjectId: 'SUB103', dueDate: '2024-09-25' },
-    { id: 4, facultyId: 'FAC321', facultyName: 'Robert Brown', subjectId: 'SUB104', dueDate: '2024-10-01' },
-    { id: 5, facultyId: 'FAC654', facultyName: 'Emily White', subjectId: 'SUB105', dueDate: '2024-10-05' },
+    { id: 1, facultyId: 'IT123', facultyName: 'AAAA', subjectId: 'IT123', dueDate: '2024-09-15' },
+    { id: 2, facultyId: 'CS123', facultyName: 'SSSS', subjectId: 'CS123', dueDate: '2024-09-20' },
+    { id: 3, facultyId: 'CB123', facultyName: 'DDDD', subjectId: 'CB123', dueDate: '2024-09-25' },
+    { id: 4, facultyId: 'EC123', facultyName: 'FFFF', subjectId: 'EC123', dueDate: '2024-10-01' },
+    { id: 5, facultyId: 'BT123', facultyName: 'GGGG', subjectId: 'BT123', dueDate: '2024-10-05' },
   ];
 
   const [tasks, setTasks] = useState(initialTasks);

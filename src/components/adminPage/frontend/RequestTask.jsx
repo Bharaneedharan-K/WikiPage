@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './RequestTask.css';
 
 const RequestTask = () => {
-  const [tasks, setTasks] = useState([
+  const [tasks] = useState([
     {
-      facultyName: 'Dr. John Doe (FD001)',
-      subjectName: 'Artificial Intelligence (CS501)',
+      facultyName: 'AAAA(CS123)',
+      subjectName: 'Artificial Intelligence Study',
       unitNumber: 1,
       topic: 'Introduction to AI',
       lectureMaterial: 'material_link_1.pdf',
@@ -13,8 +13,8 @@ const RequestTask = () => {
       discourseName: 'discourse_1',
     },
     {
-      facultyName: 'Dr. Jane Smith (FD002)',
-      subjectName: 'Data Structures (CS301)',
+      facultyName: 'SSSS (CS123)',
+      subjectName: 'Data Structures',
       unitNumber: 2,
       topic: 'Binary Trees',
       lectureMaterial: 'material_link_2.pdf',
@@ -22,7 +22,7 @@ const RequestTask = () => {
       discourseName: 'discourse_2',
     },
     {
-      facultyName: 'Dr. Alan Brown (FD003)',
+      facultyName: 'DDDD (CS003)',
       subjectName: 'Operating Systems (CS401)',
       unitNumber: 3,
       topic: 'Memory Management',
@@ -30,9 +30,8 @@ const RequestTask = () => {
       lectureVideo: 'video_link_3.mp4',
       discourseName: 'discourse_3',
     },
-    // Add more entries here
     {
-      facultyName: 'Dr. Sarah Green (FD004)',
+      facultyName: 'FFFF (EC123)',
       subjectName: 'Machine Learning (CS601)',
       unitNumber: 4,
       topic: 'Neural Networks',
@@ -40,60 +39,8 @@ const RequestTask = () => {
       lectureVideo: 'video_link_4.mp4',
       discourseName: 'discourse_4',
     },
-    {
-      facultyName: 'Dr. Emily White (FD005)',
-      subjectName: 'Database Systems (CS201)',
-      unitNumber: 5,
-      topic: 'Normalization',
-      lectureMaterial: 'material_link_5.pdf',
-      lectureVideo: 'video_link_5.mp4',
-      discourseName: 'discourse_5',
-    },
-    {
-      facultyName: 'Dr. Michael Clark (FD006)',
-      subjectName: 'Computer Networks (CS701)',
-      unitNumber: 6,
-      topic: 'Network Protocols',
-      lectureMaterial: 'material_link_6.pdf',
-      lectureVideo: 'video_link_6.mp4',
-      discourseName: 'discourse_6',
-    },
-    {
-      facultyName: 'Dr. Laura Davis (FD007)',
-      subjectName: 'Software Engineering (CS801)',
-      unitNumber: 7,
-      topic: 'Agile Methodologies',
-      lectureMaterial: 'material_link_7.pdf',
-      lectureVideo: 'video_link_7.mp4',
-      discourseName: 'discourse_7',
-    },
-    {
-      facultyName: 'Dr. Brian Wilson (FD008)',
-      subjectName: 'Algorithms (CS901)',
-      unitNumber: 8,
-      topic: 'Dynamic Programming',
-      lectureMaterial: 'material_link_8.pdf',
-      lectureVideo: 'video_link_8.mp4',
-      discourseName: 'discourse_8',
-    },
-    {
-      facultyName: 'Dr. Olivia King (FD009)',
-      subjectName: 'Computer Graphics (CS601)',
-      unitNumber: 9,
-      topic: 'Rendering Techniques',
-      lectureMaterial: 'material_link_9.pdf',
-      lectureVideo: 'video_link_9.mp4',
-      discourseName: 'discourse_9',
-    },
-    {
-      facultyName: 'Dr. Kevin Miller (FD010)',
-      subjectName: 'Cybersecurity (CS501)',
-      unitNumber: 10,
-      topic: 'Encryption Techniques',
-      lectureMaterial: 'material_link_10.pdf',
-      lectureVideo: 'video_link_10.mp4',
-      discourseName: 'discourse_10',
-    },
+    
+    
   ]);
 
   const handleApprove = (index) => {
