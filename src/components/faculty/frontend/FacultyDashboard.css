@@ -14,18 +14,21 @@
 
 .faculty-dashboard-card {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 50px;
+  min-height: 150px;
   text-align: center;
 }
 
 .faculty-dashboard-card h3 {
-  margin: 0 0 10px;
+  margin-bottom: 10px;
+  font-size: 30px;
   color: #081331;
 }
 
 .faculty-dashboard-card p {
-  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
   color: #666;
 }

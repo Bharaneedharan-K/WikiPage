@@ -6,20 +6,20 @@ const FacultyDashboard = () => {
     <div className="faculty-dashboard-container">
       <div className="faculty-dashboard-grid">
         <div className="faculty-dashboard-card">
-          <h3>Upcoming Tasks</h3>
-          <p>View all your upcoming tasks and deadlines.</p>
+          <h3>Total Points</h3>
+          <p>1500</p>
         </div>
         <div className="faculty-dashboard-card">
-          <h3>Submitted Requests</h3>
-          <p>Check the status of your submitted requests.</p>
+          <h3>Negative Point</h3>
+          <p>-130</p>
         </div>
         <div className="faculty-dashboard-card">
-          <h3>Materials Uploaded</h3>
-          <p>See all the materials you have uploaded.</p>
+          <h3>Complected Task</h3>
+          <p>30</p>
         </div>
-        <div className="faculty-dashboard-card">
-          <h3>Notifications</h3>
-          <p>Stay updated with the latest notifications.</p>
+          <div className="faculty-dashboard-card">
+          <h3>Pending Task</h3>
+        <p>3</p>
         </div>
       </div>
     </div>

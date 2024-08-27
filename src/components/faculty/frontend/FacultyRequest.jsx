@@ -1,21 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { useNavigate } from 'react-router-dom'; 
 import './FacultyRequest.css';
 
 const FacultyRequest = () => {
-  // Sample data
   const requestData = [
-    { subjectID: 'SUB101', subjectName: 'Mathematics', semester: 'Fall 2024', dueDate: '2024-09-15' },
-    { subjectID: 'SUB102', subjectName: 'Physics', semester: 'Fall 2024', dueDate: '2024-09-20' },
-    { subjectID: 'SUB103', subjectName: 'Chemistry', semester: 'Fall 2024', dueDate: '2024-09-25' },
-    { subjectID: 'SUB104', subjectName: 'Biology', semester: 'Fall 2024', dueDate: '2024-10-01' },
-    { subjectID: 'SUB105', subjectName: 'History', semester: 'Fall 2024', dueDate: '2024-10-05' },
+    { subjectID: 'IT123', subjectName: 'DSA', semester: 'Sem 8 ', dueDate: '2024-09-15' },
+    { subjectID: 'CS123', subjectName: 'OS', semester: 'Sem 2', dueDate: '2024-09-20' },
+    { subjectID: 'CB123', subjectName: 'DAA', semester: 'Sem 4', dueDate: '2024-09-25' },
+    { subjectID: 'EC123', subjectName: 'EE', semester: 'Sem 1', dueDate: '2024-10-01' },
+    { subjectID: 'BT123', subjectName: 'BT', semester: 'Sem 8', dueDate: '2024-10-05' },
   ];
 
-  const navigate = useNavigate(); // Use the useNavigate hook to get the navigate function
+  const navigate = useNavigate(); 
 
   const handleUploadClick = () => {
-    // Navigate to the FacultyUpload page
+    
     navigate('/faculty/upload');
   };
 
@@ -43,7 +42,7 @@ const FacultyRequest = () => {
                 <td>
                   <button
                     className="faculty-request-upload-button"
-                    onClick={handleUploadClick} // Navigate to upload page
+                    onClick={handleUploadClick} 
                   >
                     Upload
                   </button>

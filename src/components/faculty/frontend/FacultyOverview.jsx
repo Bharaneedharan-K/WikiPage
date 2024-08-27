@@ -2,20 +2,19 @@ import React from 'react';
 import './FacultyOverview.css';
 
 const FacultyOverview = () => {
-  // Sample data
   const overviewData = [
-    { subjectID: 'SUB101', subjectName: 'Mathematics', submissionDate: '2024-09-10', dueDate: '2024-09-15' },
-    { subjectID: 'SUB102', subjectName: 'Physics', submissionDate: '2024-09-20', dueDate: '2024-09-20' },
-    { subjectID: 'SUB103', subjectName: 'Chemistry', submissionDate: '2024-09-25', dueDate: '2024-09-22' },
-    { subjectID: 'SUB104', subjectName: 'Biology', submissionDate: '2024-10-02', dueDate: '2024-10-01' },
-    { subjectID: 'SUB105', subjectName: 'History', submissionDate: '2024-10-05', dueDate: '2024-10-05' },
+    { subjectID: 'IT132', subjectName: 'Software Engineering', submissionDate: '2024-09-10', dueDate: '2024-09-15' },
+    { subjectID: 'CS123', subjectName: 'Operating System', submissionDate: '2024-09-20', dueDate: '2024-09-20' },
+    { subjectID: 'CB123', subjectName: 'DSA', submissionDate: '2024-09-25', dueDate: '2024-09-22' },
+    { subjectID: 'EC123', subjectName: 'Electronics', submissionDate: '2024-10-02', dueDate: '2024-10-01' },
+    { subjectID: 'BT123', subjectName: 'Palnt', submissionDate: '2024-10-05', dueDate: '2024-10-05' },
     
   ];
 
   const calculateMark = (submissionDate, dueDate) => {
     const subDate = new Date(submissionDate);
     const dueDateObj = new Date(dueDate);
-    const mark = subDate > dueDateObj ? -5 : 10; // Example: -5 marks if submitted late
+    const mark = subDate > dueDateObj ? -5 : 10;
     return mark;
   };
 

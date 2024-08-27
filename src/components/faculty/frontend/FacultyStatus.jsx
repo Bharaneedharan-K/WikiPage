@@ -3,11 +3,11 @@ import './FacultyStatus.css';
 
 const FacultyStatus = () => {
   const statusData = [
-    { subjectID: 'SUB101', subjectName: 'Mathematics', semester: 'Fall 2024', status: 'Pending', reason: '' },
-    { subjectID: 'SUB102', subjectName: 'Physics', semester: 'Fall 2024', status: 'Accepted', reason: '' },
-    { subjectID: 'SUB103', subjectName: 'Chemistry', semester: 'Fall 2024', status: 'Rejected', reason: 'Late submission' },
-    { subjectID: 'SUB104', subjectName: 'Biology', semester: 'Fall 2024', status: 'Pending', reason: '' },
-    { subjectID: 'SUB105', subjectName: 'History', semester: 'Fall 2024', status: 'Accepted', reason: '' },
+    { subjectID: 'IT123', subjectName: 'DAA', semester: '5', status: 'Pending', reason: '' },
+    { subjectID: 'CS123', subjectName: 'DSA', semester: '7', status: 'Accepted', reason: '' },
+    { subjectID: 'CB123', subjectName: 'OS', semester: '2', status: 'Rejected', reason: 'Content not Maching' },
+    { subjectID: 'EC123', subjectName: 'EE', semester: '3', status: 'Pending', reason: '' },
+    { subjectID: 'BT 123', subjectName: 'BT', semester: '6', status: 'Accepted', reason: '' },
   ];
 
   return (
