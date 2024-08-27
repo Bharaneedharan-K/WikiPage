@@ -4,7 +4,7 @@ import './FacultyPage.css';
 
 import FacultyDashboard from './FacultyDashboard';
 import FacultyRequest from './FacultyRequest';
-import FacultyUpload from './FacultyUpload';
+import FacultyUpload from './FacultyUpload'; // Import FacultyUpload
 import FacultyStatus from './FacultyStatus';
 import FacultyOverview from './FacultyOverview';
 import LogoutButton from '../../LogoutButton';
@@ -44,9 +44,7 @@ const FacultyPage = () => {
                 <li className="faculty-sidebar-nav-item">
                   <Link to="/faculty/request" className="faculty-sidebar-nav-link">Request Task</Link>
                 </li>
-                <li className="faculty-sidebar-nav-item">
-                  <Link to="/faculty/upload" className="faculty-sidebar-nav-link">Upload Material</Link>
-                </li>
+                
                 <li className="faculty-sidebar-nav-item">
                   <Link to="/faculty/status" className="faculty-sidebar-nav-link">Task Status</Link>
                 </li>
@@ -63,7 +61,7 @@ const FacultyPage = () => {
           <Routes>
             <Route path="dashboard" element={<FacultyDashboard />} />
             <Route path="request" element={<FacultyRequest />} />
-            <Route path="upload" element={<FacultyUpload />} />
+            <Route path="upload" element={<FacultyUpload />} /> {/* Ensure this route exists */}
             <Route path="status" element={<FacultyStatus />} />
             <Route path="overview" element={<FacultyOverview />} />
             <Route path="*" element={<Navigate to="/faculty/dashboard" replace />} />
@@ -75,4 +73,3 @@ const FacultyPage = () => {
 };
 
 export default FacultyPage;
-  

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import './FacultyRequest.css';
 
 const FacultyRequest = () => {
@@ -10,6 +11,13 @@ const FacultyRequest = () => {
     { subjectID: 'SUB104', subjectName: 'Biology', semester: 'Fall 2024', dueDate: '2024-10-01' },
     { subjectID: 'SUB105', subjectName: 'History', semester: 'Fall 2024', dueDate: '2024-10-05' },
   ];
+
+  const navigate = useNavigate(); // Use the useNavigate hook to get the navigate function
+
+  const handleUploadClick = () => {
+    // Navigate to the FacultyUpload page
+    navigate('/faculty/upload');
+  };
 
   return (
     <div className="faculty-request-dashboard">
@@ -33,7 +41,12 @@ const FacultyRequest = () => {
                 <td>{request.semester}</td>
                 <td>{request.dueDate}</td>
                 <td>
-                  <button className="faculty-request-upload-button">Upload</button>
+                  <button
+                    className="faculty-request-upload-button"
+                    onClick={handleUploadClick} // Navigate to upload page
+                  >
+                    Upload
+                  </button>
                 </td>
               </tr>
             ))}

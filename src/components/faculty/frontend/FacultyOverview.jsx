@@ -9,6 +9,7 @@ const FacultyOverview = () => {
     { subjectID: 'SUB103', subjectName: 'Chemistry', submissionDate: '2024-09-25', dueDate: '2024-09-22' },
     { subjectID: 'SUB104', subjectName: 'Biology', submissionDate: '2024-10-02', dueDate: '2024-10-01' },
     { subjectID: 'SUB105', subjectName: 'History', submissionDate: '2024-10-05', dueDate: '2024-10-05' },
+    
   ];
 
   const calculateMark = (submissionDate, dueDate) => {
@@ -29,7 +30,7 @@ const FacultyOverview = () => {
               <th>Subject Name</th>
               <th>Submission Date</th>
               <th>Due Date</th>
-              <th>Mark (out of 10)</th>
+              <th>Points</th>
             </tr>
           </thead>
           <tbody>
