@@ -2,7 +2,6 @@ import React from 'react';
 import './FacultyStatus.css';
 
 const FacultyStatus = () => {
-  // Sample data
   const statusData = [
     { subjectID: 'SUB101', subjectName: 'Mathematics', semester: 'Fall 2024', status: 'Pending', reason: '' },
     { subjectID: 'SUB102', subjectName: 'Physics', semester: 'Fall 2024', status: 'Accepted', reason: '' },

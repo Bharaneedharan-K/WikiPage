@@ -14,14 +14,7 @@ const FacultyRequest = () => {
   return (
     <div className="faculty-request-dashboard">
       <div className="faculty-request-card">
-        <h2 className="faculty-request-title">Request Uploads</h2>
-        <div className="faculty-request-filters">
-          <input type="text" placeholder="Filter by Subject Name" className="faculty-request-filter" />
-          <input type="text" placeholder="Filter by Semester" className="faculty-request-filter" />
-          <input type="date" className="faculty-request-filter" />
-          <button className="faculty-request-apply-button">Apply Filter</button>
-          <button className="faculty-request-reset-button">Reset Filters</button>
-        </div>
+        <h2 className="faculty-request-title">Requested Task</h2>
         <table className="faculty-request-table">
           <thead>
             <tr>

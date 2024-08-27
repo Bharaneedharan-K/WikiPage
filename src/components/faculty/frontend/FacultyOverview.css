@@ -1,32 +1,43 @@
+/* FacultyOverview.css */
+
 .faculty-overview-dashboard {
   padding: 20px;
-  background-color: transparent; /* Make the background outside the card transparent */
+  background-color: transparent;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .faculty-overview-card {
-  background-color: #1b2735; /* Dark background for the card */
+  background-color: #1b2735;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a card effect */
-  width: 80%; /* Width adjustment */
-  max-width: 1200px; /* Maximum width to prevent excessive stretching */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
 }
 
 .faculty-overview-title {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 29px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
+  text-align: left;
 }
 
 .faculty-overview-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.faculty-overview-table::-webkit-scrollbar {
+  display: none;
 }
 
 .faculty-overview-table th,
@@ -38,10 +49,10 @@
 
 .faculty-overview-table th {
   background-color: #081331;
-  color: #fff;
+  color: #ffffff;
 }
 
 .faculty-overview-table td {
   background-color: #2e3b4e;
-  color: #fff;
+  color: #ffffff;
 }

@@ -1,66 +1,41 @@
-/* FacultyRequest.css */
-
 .faculty-request-dashboard {
   padding: 20px;
-  background-color: transparent; /* Make the background outside the card transparent */
+  background-color: transparent;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
+  align-items: flex-start;
+  min-height: 100vh;
 }
 
 .faculty-request-card {
-  background-color: #1b2735; /* Dark background for the card */
+  background-color: #1b2735;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a card effect */
-  width: 80%; /* Width adjustment */
-  max-width: 1200px; /* Maximum width to prevent excessive stretching */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
 }
 
 .faculty-request-title {
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 29px;
   font-weight: bold;
-  color: #fff;
-}
-
-.faculty-request-filters {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.faculty-request-filter {
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.faculty-request-apply-button {
-  padding: 10px 20px;
-  background-color: #f08517;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.faculty-request-reset-button {
-  padding: 10px 20px;
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  color: #ffffff;
+  text-align: left;
 }
 
 .faculty-request-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.faculty-request-table::-webkit-scrollbar {
+  display: none;
 }
 
 .faculty-request-table th,
@@ -72,19 +47,19 @@
 
 .faculty-request-table th {
   background-color: #081331;
-  color: #fff;
+  color: #ffffff;
 }
 
 .faculty-request-table td {
   background-color: #2e3b4e;
-  color: #fff;
+  color: #ffffff;
 }
 
 .faculty-request-upload-button {
-  padding: 8px 16px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
+  padding: 8px 12px;
   border-radius: 4px;
+  border: none;
   cursor: pointer;
+  background-color: #1e88e5;
+  color: #ffffff;
 }
