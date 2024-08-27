@@ -1,0 +1,75 @@
+.faculty-status-dashboard {
+    padding: 20px;
+    background-color: transparent; /* Make the background outside the card transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .faculty-status-card {
+    background-color: #1b2735; /* Dark background for the card */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a card effect */
+    width: 80%; /* Width adjustment */
+    max-width: 1200px; /* Maximum width to prevent excessive stretching */
+  }
+  
+  .faculty-status-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .faculty-status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .faculty-status-table th,
+  .faculty-status-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .faculty-status-table th {
+    background-color: #081331;
+    color: #fff;
+  }
+  
+  .faculty-status-table td {
+    background-color: #2e3b4e;
+    color: #fff;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+  
+  .status.pending {
+    background-color: #f5b041; /* Orange for Pending */
+  }
+  
+  .status.accepted {
+    background-color: #2ecc71; /* Green for Accepted */
+  }
+  
+  .status.rejected {
+    background-color: #e74c3c; /* Red for Rejected */
+  }
+  
+  .status-reason {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #fff;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #e74c3c; /* Background color for reason */
+  }
+  
