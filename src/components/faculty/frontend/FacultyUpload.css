@@ -1,0 +1,67 @@
+.upload-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1b2a;
+    padding: 20px;
+  }
+  
+  .upload-form-container {
+    background-color: #1b2735;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .upload-form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #2e3b4e;
+    background-color: #0d1b2a;
+    color: #ffffff;
+  }
+  
+  .form-group input[readonly] {
+    background-color: #2e3b4e;
+    color: #aaaaaa;
+  }
+  
+  .upload-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    background-color: #1e88e5;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  

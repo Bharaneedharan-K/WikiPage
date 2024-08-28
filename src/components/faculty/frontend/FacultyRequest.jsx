@@ -1,21 +1,22 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import './FacultyRequest.css';
 
 const FacultyRequest = () => {
   const requestData = [
-    { subjectID: 'IT123', subjectName: 'DSA', semester: 'Sem 8 ', dueDate: '2024-09-15' },
+    { subjectID: 'IT123', subjectName: 'DSA', semester: 'Sem 8', dueDate: '2024-09-15' },
     { subjectID: 'CS123', subjectName: 'OS', semester: 'Sem 2', dueDate: '2024-09-20' },
     { subjectID: 'CB123', subjectName: 'DAA', semester: 'Sem 4', dueDate: '2024-09-25' },
     { subjectID: 'EC123', subjectName: 'EE', semester: 'Sem 1', dueDate: '2024-10-01' },
     { subjectID: 'BT123', subjectName: 'BT', semester: 'Sem 8', dueDate: '2024-10-05' },
   ];
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  const handleUploadClick = () => {
-    
-    navigate('/faculty/upload');
+  // Function to handle upload button click
+  const handleUploadClick = (dueDate) => {
+    // Navigate to upload page with dueDate as state
+    navigate('/faculty/upload', { state: { dueDate } });
   };
 
   return (
@@ -42,7 +43,7 @@ const FacultyRequest = () => {
                 <td>
                   <button
                     className="faculty-request-upload-button"
-                    onClick={handleUploadClick} 
+                    onClick={() => handleUploadClick(request.dueDate)} // Pass dueDate to handler
                   >
                     Upload
                   </button>
