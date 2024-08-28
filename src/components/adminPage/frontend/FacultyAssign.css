@@ -68,13 +68,13 @@
   background-color: #0b84d7;
   color: #fff;
   border: none;
-  margin-top: 10px;
+  margin-top: 5px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
-  bottom: -10px; 
+  bottom: 12px; 
   right: 40px;
 }
 
