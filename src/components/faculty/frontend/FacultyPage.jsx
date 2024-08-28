@@ -61,7 +61,7 @@ const FacultyPage = () => {
           <Routes>
             <Route path="dashboard" element={<FacultyDashboard />} />
             <Route path="request" element={<FacultyRequest />} />
-            <Route path="upload" element={<FacultyUpload />} /> {/* Ensure this route exists */}
+            <Route path="upload" element={<FacultyUpload />} /> 
             <Route path="status" element={<FacultyStatus />} />
             <Route path="overview" element={<FacultyOverview />} />
             <Route path="*" element={<Navigate to="/faculty/dashboard" replace />} />

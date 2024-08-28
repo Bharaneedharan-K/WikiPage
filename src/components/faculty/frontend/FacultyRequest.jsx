@@ -13,9 +13,7 @@ const FacultyRequest = () => {
 
   const navigate = useNavigate();
 
-  // Function to handle upload button click
   const handleUploadClick = (dueDate) => {
-    // Navigate to upload page with dueDate as state
     navigate('/faculty/upload', { state: { dueDate } });
   };
 

@@ -4,8 +4,8 @@ import './FacultyUpload.css';
 
 const FacultyUpload = () => {
   const location = useLocation();
-  const dueDate = location.state?.dueDate || '2024-09-15'; // Default due date if not passed
-  const submissionDate = new Date().toISOString().split('T')[0]; // Today's date as submission date
+  const dueDate = location.state?.dueDate || '2024-09-15'; 
+  const submissionDate = new Date().toISOString().split('T')[0]; 
 
   return (
     <div className="upload-page">

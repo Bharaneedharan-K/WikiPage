@@ -64,7 +64,7 @@ const AdminPage = () => {
             <Route path="request-task" element={<RequestTask />} />
             <Route path="pending" element={<StatusPage />} />
             <Route path="generate-code" element={<CodeGenerate />} />
-            <Route path="*" element={<Navigate to="/admin/dashboard" />} /> {/* Redirect to dashboard by default */}
+            <Route path="*" element={<Navigate to="/admin/dashboard" />} />
           </Routes>
         </div>
       </div>
