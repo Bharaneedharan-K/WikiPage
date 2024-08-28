@@ -6,13 +6,13 @@ const LogoutButton = ({ onLogout }) => {
 
   const handleLogout = () => {
     console.log('Logging out...');
-    onLogout(); // Trigger any additional logout logic if needed
-    navigate('/admin/login'); // Redirect to login page
+    onLogout(); 
+    navigate('/admin/login'); 
   };
 
   return (
     <button className="logout-button" onClick={handleLogout}>
-      <i className="fas fa-sign-out-alt"></i> {/* Font Awesome logout icon */}
+      <i className="fas fa-sign-out-alt"></i> 
     </button>
   );
 };

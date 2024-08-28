@@ -12,19 +12,11 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          {/* Route for the admin login page */}
+         
           <Route path="/admin/login" element={<LoginPage />} />
-          
-          {/* Route for the admin dashboard and other admin-related pages */}
           <Route path="/admin/*" element={<AdminPage />} />
-
-          {/* Route for the faculty page */}
           <Route path="/faculty/*" element={<FacultyPage />} />
-
-          {/* Default route redirect: Could redirect to login or homepage */}
           <Route path="/" element={<Navigate to="/admin/login" />} />
-
-          {/* Fallback route if no other routes match */}
           <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
       </div>

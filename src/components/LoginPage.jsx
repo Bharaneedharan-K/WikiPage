@@ -1,17 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
+import { useNavigate } from 'react-router-dom'; 
 import './LoginPage.css';
 import logo from './assets/logo.png';
 
 const LoginPage = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleAdminPageClick = () => {
-    navigate('/admin/dashboard'); // Use navigate to go to the Admin Page
+    navigate('/admin/dashboard'); 
   };
 
   const handleFacultyPageClick = () => {
-    navigate('/faculty/dashboard'); // Correct path to go to the Faculty Page
+    navigate('/faculty/dashboard'); 
   };
 
   return (

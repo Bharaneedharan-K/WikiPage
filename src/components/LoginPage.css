@@ -1,18 +1,17 @@
-/* LoginPage.css */
 .login-page {
-    background-color: #1a1d36; /* Dark blue background color */
-    height: 100vh; /* Full height of the viewport */
+    background-color: #1a1d36; 
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .login-container {
-    background-color: #2e3149; /* Slightly lighter blue for the container */
+    background-color: #2e3149; 
     padding: 40px;
     border-radius: 8px;
     text-align: center;
-    width: 300px; /* Adjust width as needed */
+    width: 300px; 
   }
   
   .welcome-text {
@@ -22,7 +21,7 @@
   }
   
   .login-logo {
-    width: 250px; /* Adjust logo size as needed */
+    width: 250px; 
     height: 200px;
   
     margin-bottom: 20px;
@@ -42,7 +41,7 @@
   }
   
   .google-sign-in {
-    background-color: #1e7e34; /* Blue button */
+    background-color: #1e7e34; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -53,18 +52,18 @@
   }
   
   .google-sign-in:hover {
-    background-color: #155d27; /* Darker blue on hover */
+    background-color: #155d27; 
   }
   
   .sign-in-text {
-    color: #bdbdbd; /* Light gray text */
+    color: #bdbdbd; 
     font-size: 12px;
   }
   
   .button-container {
     position: absolute;
-    right: 20px; /* Distance from the right edge */
-    top: 20px; /* Distance from the top edge */
+    right: 20px; 
+    top: 20px; 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -74,16 +73,16 @@
   .faculty-page-button {
     margin-top: 10px;
     padding: 10px;
-    background-color: #4CAF50; /* Green button */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    width: 150px; /* Adjust width as needed */
+    width: 150px; 
     border-radius: 5px;
   }
   
   .admin-page-button:hover,
   .faculty-page-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
   }
