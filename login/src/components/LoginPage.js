@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import './LoginPage.css';  // Create this CSS file for styles
-import logo from './assets/logo.png';  // Place your logo image in the src/assets directory
+import './LoginPage.css';
+import logo from './assets/logo.png';
 
 const LoginPage = () => {
   const [error, setError] = useState(null);
@@ -20,13 +20,16 @@ const LoginPage = () => {
           }
         });
 
-        const userInfo = res.data;  // Store user details
+        const userInfo = res.data;
 
-        // Redirect based on user role (this logic can be customized)
-        if (userInfo.email.includes('bharaneedharan.cb22@bitsathy.ac.in')) { // Example condition for admin email
+        // Check if the user is an admin
+        const adminRes = await axios.get('http://localhost:5000/api/admin');
+        const adminEmails = adminRes.data.map(admin => admin.emailId);
+
+        if (adminEmails.includes(userInfo.email)) {
           window.location.href = 'http://localhost:3000/admin/dashboard'; // Redirect to Admin Dashboard
         } else {
-          window.location.href = 'http://localhost:3000/faculty/dashboard'; // Redirect to Faculty Dashboard
+          setError('You are not authorized as an Admin.');
         }
       } catch (err) {
         console.error('Failed to fetch user info', err);
@@ -39,12 +42,15 @@ const LoginPage = () => {
     },
   });
 
-  const handleAdminPageClick = () => {
+  // Handle Admin login
+  const handleAdminLogin = () => {
     login(); // Trigger Google login for Admin
   };
 
-  const handleFacultyPageClick = () => {
-    login(); // Trigger Google login for Faculty
+  // Handle Faculty login (logic to be implemented later)
+  const handleFacultyLogin = () => {
+    // Logic for Faculty login will go here
+    console.log('Faculty login logic not implemented yet.');
   };
 
   return (
@@ -58,8 +64,9 @@ const LoginPage = () => {
         />
         <hr className="divider" />
         {error && <p>{error}</p>}
-        <button className="google-sign-in" onClick={handleAdminPageClick}>Admin Sign In</button><p></p>
-        <button className="google-sign-in" onClick={handleFacultyPageClick}>Faculty Sign In</button>
+        <button className="google-sign-in" onClick={handleAdminLogin}>Admin Sign In</button>
+        <p></p>
+        <button className="google-sign-in" onClick={handleFacultyLogin}>Faculty Sign In</button>
         <p className="sign-in-text">Sign in with your BIT account</p>
       </div>
     </div>

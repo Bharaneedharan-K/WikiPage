@@ -1,64 +1,44 @@
 // server.js
-const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const Admin = require('./models/admin');
-const Faculty = require('./models/faculty');
-const Task = require('./models/task');
-const Materials = require('./models/materials');
 
-dotenv.config();
-connectDB();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
 app.use(express.json());
 
-// Create a new admin
-app.post('/admin', async (req, res) => {
-    try {
-        const newAdmin = new Admin({ emailId: req.body.emailId });
-        await newAdmin.save();
-        res.status(201).json(newAdmin);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Admin Schema
+const adminSchema = new mongoose.Schema({
+  emailId: String,
 });
 
-// Create a new faculty
-app.post('/faculty', async (req, res) => {
-    try {
-        const newFaculty = new Faculty(req.body);
-        await newFaculty.save();
-        res.status(201).json(newFaculty);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-});
+const Admin = mongoose.model('Admin', adminSchema);
 
-// Create a new task
-app.post('/task', async (req, res) => {
-    try {
-        const newTask = new Task(req.body);
-        await newTask.save();
-        res.status(201).json(newTask);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
-});
-
-// Create new materials
-app.post('/materials', async (req, res) => {
-    try {
-        const newMaterials = new Materials(req.body);
-        await newMaterials.save();
-        res.status(201).json(newMaterials);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
+// API endpoint to get admin emails
+app.get('/api/admin', async (req, res) => {
+  try {
+    const admins = await Admin.find({});
+    res.json(admins);
+  } catch (error) {
+    console.error('Error fetching admin emails:', error);
+    res.status(500).send('Server error');
+  }
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
