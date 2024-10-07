@@ -40,15 +40,21 @@ app.get('/api/admin', async (req, res) => {
 // Helper function to write to .env file
 const storeEmailInEnv = (email) => {
   const envPath = '.env';
-  
+
   // Read the existing .env content
   let envData = fs.readFileSync(envPath, 'utf-8');
 
-  // Append the email (replace any previous email entry)
-  const updatedEnvData = envData.replace(/EMAIL_ID=.*/g, '') + `\nEMAIL_ID=${email}`;
+  // If EMAIL_ID exists, update it; if not, add it without extra newlines
+  if (envData.includes('EMAIL_ID=')) {
+    // Replace the existing EMAIL_ID with the new one
+    envData = envData.replace(/EMAIL_ID=.*/g, `EMAIL_ID=${email}`);
+  } else {
+    // Add EMAIL_ID at the end, without adding extra new lines
+    envData = envData.trim() + `\nEMAIL_ID=${email}`;
+  }
 
   // Write the updated content back to the .env file
-  fs.writeFileSync(envPath, updatedEnvData);
+  fs.writeFileSync(envPath, envData);
 };
 
 // Endpoint to store logged-in email in .env file
