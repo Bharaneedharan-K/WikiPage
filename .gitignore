@@ -21,3 +21,55 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend/.pnp.js
+/backend/node_modules
+/backend/.pnp
+/backend/.pnp.js
+/login/node_modules
+/login/.pnp
+/login/.pnp.js
+
+# testing
+/frontend/coverage
+/backend/coverage
+/login/coverage
+
+# production
+/frontend/build
+/backend/build
+/login/build
+
+# misc
+/frontend/.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+/backend/.DS_Store
+/backend/.env.local
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+/login/.DS_Store
+/login/.env.local
+/login/.env.development.local
+/login/.env.test.local
+/login/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+/backend/npm-debug.log*
+/backend/yarn-debug.log*
+/backend/yarn-error.log*
+/login/npm-debug.log*
+/login/yarn-debug.log*
+/login/yarn-error.log*

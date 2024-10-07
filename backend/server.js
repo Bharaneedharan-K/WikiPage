@@ -1,8 +1,7 @@
-// server.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
@@ -17,8 +16,8 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 // Admin Schema
 const adminSchema = new mongoose.Schema({
@@ -35,6 +34,38 @@ app.get('/api/admin', async (req, res) => {
   } catch (error) {
     console.error('Error fetching admin emails:', error);
     res.status(500).send('Server error');
+  }
+});
+
+// Helper function to write to .env file
+const storeEmailInEnv = (email) => {
+  const envPath = '.env';
+  
+  // Read the existing .env content
+  let envData = fs.readFileSync(envPath, 'utf-8');
+
+  // Append the email (replace any previous email entry)
+  const updatedEnvData = envData.replace(/EMAIL_ID=.*/g, '') + `\nEMAIL_ID=${email}`;
+
+  // Write the updated content back to the .env file
+  fs.writeFileSync(envPath, updatedEnvData);
+};
+
+// Endpoint to store logged-in email in .env file
+app.post('/api/store-email', async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).send('Email is required');
+  }
+
+  try {
+    // Store the email in the .env file
+    storeEmailInEnv(email);
+    res.send('Email stored successfully in .env file');
+  } catch (error) {
+    console.error('Error storing email in .env file:', error);
+    res.status(500).send('Error storing email');
   }
 });
 

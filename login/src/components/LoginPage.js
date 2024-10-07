@@ -1,5 +1,3 @@
-// src/components/LoginPage.js
-
 import React, { useState } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
@@ -14,13 +12,26 @@ const LoginPage = () => {
     onSuccess: async tokenResponse => {
       console.log(tokenResponse);
       try {
+        // Fetch the user info from Google
         const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
           headers: {
-            Authorization: `Bearer ${tokenResponse.access_token}`
-          }
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
         });
 
         const userInfo = res.data;
+        console.log('User Info:', userInfo);
+
+        // Store the email in the backend
+        try {
+          const emailRes = await axios.post('http://localhost:5000/api/store-email', {
+            email: userInfo.email,
+          });
+          console.log(emailRes.data); // Success message
+        } catch (emailError) {
+          console.error('Error storing email:', emailError);
+          setError('Failed to store email in backend');
+        }
 
         // Check if the user is an admin
         const adminRes = await axios.get('http://localhost:5000/api/admin');
