@@ -1,18 +1,32 @@
-
 .faculty-assign-container {
   margin: 0 auto;
   padding: 40px;
-  width: 100%; 
+  width: 75vw; 
   max-width: 100%; 
   background-color: rgba(42, 42, 42, 0); 
   border-radius: 10px;
   color: #ffffff;
   position: relative;
+  overflow-y: auto;   /* Enable vertical scrolling */
+  max-height: calc(100vh - 150px); /* Increased max height to control scrollability */
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+  padding-bottom: 80px; /* Add padding to avoid overlap with button */
+}
+
+/* Optional: Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.faculty-assign-container::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar width */
+  height: 0; /* Remove scrollbar height */
+}
+
+/* Optional: Hide scrollbar for Firefox */
+.faculty-assign-container {
+  scrollbar-width: none; /* For Firefox */
 }
 
 .faculty-assign-container h2 {
   text-align: left; 
-  margin-bottom: 50px;
+  margin-bottom: 20px; /* Reduced to fit more content */
   margin-top: 10px;
   color: #ffffff;
   font-size: 32px; 
@@ -38,7 +52,7 @@
   font-weight: 600;
   text-align: right; 
   margin-right: 10px; 
-  width: 500px;
+  width: 500px; /* Set a fixed width for labels */
 }
 
 .faculty-assign-container input[type="text"],
@@ -61,6 +75,7 @@
 .faculty-assign-container .form-actions {
   display: flex;
   justify-content: flex-end;
+  margin-top: auto; /* Pushes button to the bottom */
 }
 
 .faculty-assign-container .assign-button {
@@ -68,14 +83,10 @@
   background-color: #0b84d7;
   color: #fff;
   border: none;
-  margin-top: 5px;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: absolute;
-  bottom: 12px; 
-  right: 40px;
 }
 
 .faculty-assign-container .assign-button:hover {

@@ -7,6 +7,8 @@ const FacultyAssign = () => {
     facultyId: '',
     facultyName: '',
     facultyEmail: '',
+    semester: '',
+    batchYear: '',
     subjectName: '',
     subjectCode: ''
   });
@@ -18,15 +20,55 @@ const FacultyAssign = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    // Retrieve admin email from the environment (or however you store it)
+    const addedBy = process.env.REACT_APP_ADMIN_EMAIL || ''; // Ensure you have a way to set this
+
+    // Prepare data to send
+    const dataToSend = {
+      ...formData,
+      addedBy // Add admin email to the data
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/faculty', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(dataToSend),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Faculty assigned:', result);
+        // Optionally reset form or show success message
+        setFormData({
+          department: '',
+          facultyId: '',
+          facultyName: '',
+          facultyEmail: '',
+          semester: '',
+          batchYear: '',
+          subjectName: '',
+          subjectCode: ''
+        });
+      } else {
+        const errorMessage = await response.text();
+        console.error('Error assigning faculty:', errorMessage);
+      }
+    } catch (error) {
+      console.error('Error in submit:', error);
+    }
   };
 
   return (
     <div className="faculty-assign-container">
-      <h2>Assign Faculty</h2>
+      <h2>Assign Faculty</h2><br></br>
       <form onSubmit={handleSubmit}>
+        {/* Form fields */}
         <div className="form-group">
           <label htmlFor="department">Department *</label>
           <input
@@ -75,6 +117,32 @@ const FacultyAssign = () => {
             value={formData.facultyEmail}
             onChange={handleChange}
             placeholder="Enter Faculty Email ID"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="semester">Semester *</label>
+          <input
+            type="text"
+            id="semester"
+            name="semester"
+            value={formData.semester}
+            onChange={handleChange}
+            placeholder="Enter Semester"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="batchYear">Batch Year *</label>
+          <input
+            type="text"
+            id="batchYear"
+            name="batchYear"
+            value={formData.batchYear}
+            onChange={handleChange}
+            placeholder="Enter Batch Year"
             required
           />
         </div>

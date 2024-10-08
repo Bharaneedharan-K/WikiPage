@@ -43,17 +43,28 @@ app.get('/api/admin', async (req, res) => {
   }
 });
 
-// Endpoint to store logged-in email in session
-app.post('/api/store-email', (req, res) => {
+// Endpoint to store logged-in email in session (only if authorized as Admin)
+app.post('/api/store-email', async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
     return res.status(400).send('Email is required');
   }
 
-  // Store email in session
-  req.session.email = email;
-  res.send(`Email ${email} stored temporarily in session`);
+  try {
+    // Check if the email exists in the Admin collection
+    const admin = await Admin.findOne({ emailId: email });
+    if (!admin) {
+      return res.status(401).send('Unauthorized: Not an admin');
+    }
+
+    // If admin is found, store the email in session
+    req.session.email = email;
+    res.send(`Admin email ${email} stored temporarily in session`);
+  } catch (error) {
+    console.error('Error checking admin email:', error);
+    res.status(500).send('Server error');
+  }
 });
 
 // Endpoint to get the logged-in user's email from session
