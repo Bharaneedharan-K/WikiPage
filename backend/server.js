@@ -1,7 +1,9 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const fs = require('fs');
+const session = require('express-session');  // Session package
+const Admin = require('./models/admin');  // Import the Admin model
 require('dotenv').config();
 
 const app = express();
@@ -11,6 +13,17 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Session Middleware
+app.use(session({
+  secret: 'your-secret-key', // Replace with a secure secret
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 3600000, // 1 hour in milliseconds
+    secure: false,   // Set to true if using HTTPS
+  },
+}));
+
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -18,13 +31,6 @@ mongoose.connect(process.env.MONGO_URI, {
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
-
-// Admin Schema
-const adminSchema = new mongoose.Schema({
-  emailId: String,
-});
-
-const Admin = mongoose.model('Admin', adminSchema);
 
 // API endpoint to get admin emails
 app.get('/api/admin', async (req, res) => {
@@ -37,42 +43,38 @@ app.get('/api/admin', async (req, res) => {
   }
 });
 
-// Helper function to write to .env file
-const storeEmailInEnv = (email) => {
-  const envPath = '.env';
-
-  // Read the existing .env content
-  let envData = fs.readFileSync(envPath, 'utf-8');
-
-  // If EMAIL_ID exists, update it; if not, add it without extra newlines
-  if (envData.includes('EMAIL_ID=')) {
-    // Replace the existing EMAIL_ID with the new one
-    envData = envData.replace(/EMAIL_ID=.*/g, `EMAIL_ID=${email}`);
-  } else {
-    // Add EMAIL_ID at the end, without adding extra new lines
-    envData = envData.trim() + `\nEMAIL_ID=${email}`;
-  }
-
-  // Write the updated content back to the .env file
-  fs.writeFileSync(envPath, envData);
-};
-
-// Endpoint to store logged-in email in .env file
-app.post('/api/store-email', async (req, res) => {
+// Endpoint to store logged-in email in session
+app.post('/api/store-email', (req, res) => {
   const { email } = req.body;
 
   if (!email) {
     return res.status(400).send('Email is required');
   }
 
-  try {
-    // Store the email in the .env file
-    storeEmailInEnv(email);
-    res.send('Email stored successfully in .env file');
-  } catch (error) {
-    console.error('Error storing email in .env file:', error);
-    res.status(500).send('Error storing email');
+  // Store email in session
+  req.session.email = email;
+  res.send(`Email ${email} stored temporarily in session`);
+});
+
+// Endpoint to get the logged-in user's email from session
+app.get('/api/get-email', (req, res) => {
+  const email = req.session.email;
+
+  if (!email) {
+    return res.status(404).send('No email found in session');
   }
+
+  res.json({ email });
+});
+
+// Endpoint to clear session (logout)
+app.post('/api/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send('Error logging out');
+    }
+    res.send('User logged out, session cleared');
+  });
 });
 
 // Start the server
