@@ -22,15 +22,16 @@ const LoginPage = () => {
         const userInfo = res.data;
         console.log('User Info:', userInfo);
 
-        // Store the email in the backend
+        // Store the email and name in the backend
         try {
           const emailRes = await axios.post('http://localhost:5000/api/store-email', {
             email: userInfo.email,
+            name: userInfo.name,  // Send the user's name as well
           });
           console.log(emailRes.data); // Success message
         } catch (emailError) {
-          console.error('Error storing email:', emailError);
-          setError('Failed to store email in backend');
+          console.error('Error storing email and name:', emailError);
+          setError('Failed to store email and name in backend');
         }
 
         // Check if the user is an admin
@@ -60,7 +61,6 @@ const LoginPage = () => {
 
   // Handle Faculty login (logic to be implemented later)
   const handleFacultyLogin = () => {
-    // Logic for Faculty login will go here
     console.log('Faculty login logic not implemented yet.');
   };
 

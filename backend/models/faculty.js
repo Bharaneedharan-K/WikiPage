@@ -1,7 +1,5 @@
-// models/faculty.js
 const mongoose = require('mongoose');
 
-// Faculty Schema
 const facultySchema = new mongoose.Schema({
   department: {
     type: String,
@@ -10,6 +8,7 @@ const facultySchema = new mongoose.Schema({
   facultyId: {
     type: String,
     required: true,
+    unique: true,
   },
   facultyName: {
     type: String,
@@ -35,12 +34,10 @@ const facultySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  addedBy: { // To store the admin email who added this faculty
-    type: String,
+  addedBy: {
+    type: String, // Email of the admin who added the faculty
     required: true,
   },
 });
 
-const Faculty = mongoose.model('Faculty', facultySchema);
-
-module.exports = Faculty;
+module.exports = mongoose.model('Faculty', facultySchema);
