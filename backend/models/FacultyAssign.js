@@ -1,7 +1,8 @@
-// models/FacultyAssign.js
+// models/facultyAssign.js
+
 const mongoose = require('mongoose');
 
-// Define the schema for faculty assignment
+// Define the Faculty Assignment Schema
 const facultyAssignSchema = new mongoose.Schema({
   department: { type: String, required: true },
   facultyId: { type: String, required: true },
@@ -11,10 +12,10 @@ const facultyAssignSchema = new mongoose.Schema({
   batchYear: { type: String, required: true },
   subjectName: { type: String, required: true },
   subjectCode: { type: String, required: true },
-  addedByAdminEmail: { type: String, required: true }, // Admin email for tracking
-  addedByAdminName: { type: String, required: true }, // Admin name for tracking
 });
 
-// Create and export the model
+// Create a model from the schema
 const FacultyAssign = mongoose.model('FacultyAssign', facultyAssignSchema);
+
+// Export the model
 module.exports = FacultyAssign;

@@ -73,3 +73,10 @@ yarn-error.log*
 /login/npm-debug.log*
 /login/yarn-debug.log*
 /login/yarn-error.log*
+
+
+
+
+
+
+# nodemon .\server.js

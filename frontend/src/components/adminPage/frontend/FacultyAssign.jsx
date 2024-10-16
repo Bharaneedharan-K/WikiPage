@@ -23,13 +23,12 @@ const FacultyAssign = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Retrieve admin email from the environment (or however you store it)
-    const addedBy = process.env.REACT_APP_ADMIN_EMAIL || ''; // Ensure you have a way to set this
+    // Log form data to check for empty fields
+    console.log('Form data:', formData); // Log the form data
 
-    // Prepare data to send
+    // Prepare data to send (no admin email included)
     const dataToSend = {
-      ...formData,
-      addedBy // Add admin email to the data
+      ...formData
     };
 
     try {

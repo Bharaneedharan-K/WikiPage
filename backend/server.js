@@ -2,9 +2,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const session = require('express-session');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 const Admin = require('./models/admin'); // Import the Admin model
 const MongoStore = require('connect-mongo'); // For storing sessions in MongoDB
-require('dotenv').config();
+
+dotenv.config(); // Load .env file
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -12,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -21,21 +25,23 @@ mongoose.connect(process.env.MONGO_URI, {
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Use session store for better persistence in MongoDB
+// Use session store for persistence in MongoDB
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key', // Use environment variable for security
+  secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
-  saveUninitialized: false, // Avoid creating sessions for unauthenticated users
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }), // Store sessions in MongoDB
+  saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie: {
-    maxAge: 3600000, // 1 hour in milliseconds
-    secure: process.env.NODE_ENV === 'production', // Set secure to true in production (HTTPS)
-    httpOnly: true, // Protect against XSS attacks
-    sameSite: 'strict', // Prevent CSRF attacks
+    maxAge: 3600000, // 1 hour
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    sameSite: 'strict',
   },
 }));
 
-// API endpoint to get admin emails
+// Admin-related routes
+
+// API to fetch admin emails
 app.get('/api/admin', async (req, res) => {
   try {
     const admins = await Admin.find({});
@@ -46,7 +52,7 @@ app.get('/api/admin', async (req, res) => {
   }
 });
 
-// Endpoint to store logged-in email and name in session (only if authorized as Admin)
+// API to store logged-in email and name in session
 app.post('/api/store-email', async (req, res) => {
   const { email, name } = req.body;
 
@@ -55,23 +61,21 @@ app.post('/api/store-email', async (req, res) => {
   }
 
   try {
-    // Check if the email exists in the Admin collection
     const admin = await Admin.findOne({ emailId: email });
     if (!admin) {
       return res.status(401).json({ error: 'Unauthorized: Not an admin' });
     }
 
-    // If admin is found, store the email and name in session
     req.session.email = email;
     req.session.name = name;
-    res.json({ message: `Admin email ${email} and name ${name} stored temporarily in session` });
+    res.json({ message: `Admin email ${email} and name ${name} stored in session` });
   } catch (error) {
     console.error('Error checking admin email:', error);
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-// Endpoint to get the logged-in user's email and name from session
+// API to get session email and name
 app.get('/api/get-email', (req, res) => {
   const email = req.session.email;
   const name = req.session.name;
@@ -83,7 +87,7 @@ app.get('/api/get-email', (req, res) => {
   res.json({ email, name });
 });
 
-// Endpoint to clear session (logout)
+// API to logout
 app.post('/api/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -94,7 +98,36 @@ app.post('/api/logout', (req, res) => {
   });
 });
 
+// Faculty Assignment-related routes
+
+// Define a Faculty Assignment Schema
+const facultyAssignSchema = new mongoose.Schema({
+  department: { type: String, required: true },
+  facultyId: { type: String, required: true },
+  facultyName: { type: String, required: true },
+  facultyEmail: { type: String, required: true },
+  semester: { type: String, required: true },
+  batchYear: { type: String, required: true },
+  subjectName: { type: String, required: true },
+  subjectCode: { type: String, required: true },
+});
+
+// Create a model based on the schema with collection name 'facultyassign'
+const FacultyAssign = mongoose.model('FacultyAssign', facultyAssignSchema, 'facultyassign');
+
+// POST route to create a new faculty assignment
+app.post('/api/faculty', async (req, res) => {
+  try {
+    const newAssignment = new FacultyAssign(req.body);
+    const savedAssignment = await newAssignment.save();
+    res.status(201).json(savedAssignment);
+  } catch (error) {
+    console.error('Error saving faculty assignment:', error);
+    res.status(500).json({ error: 'Failed to save assignment' });
+  }
+});
+
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
