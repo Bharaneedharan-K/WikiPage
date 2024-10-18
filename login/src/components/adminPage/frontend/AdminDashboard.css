@@ -1,0 +1,41 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 35px; 
+  height: 90%;
+  width: 140%; 
+  padding: 20px;
+}
+
+.task-card {
+  background-color: #99a8c4;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; 
+  margin-left: 20px;
+}
+
+.task-card h3 {
+  font-size: 2em; 
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.count-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.count-item {
+  font-size: 2em; 
+  font-weight: bold;
+  color: #333;
+}

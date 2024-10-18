@@ -1,0 +1,65 @@
+.faculty-request-dashboard {
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.faculty-request-card {
+  background-color: #1b2735;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.faculty-request-title {
+  margin-bottom: 20px;
+  font-size: 29px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+}
+
+.faculty-request-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.faculty-request-table::-webkit-scrollbar {
+  display: none;
+}
+
+.faculty-request-table th,
+.faculty-request-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.faculty-request-table th {
+  background-color: #081331;
+  color: #ffffff;
+}
+
+.faculty-request-table td {
+  background-color: #2e3b4e;
+  color: #ffffff;
+}
+
+.faculty-request-upload-button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #1e88e5;
+  color: #ffffff;
+}

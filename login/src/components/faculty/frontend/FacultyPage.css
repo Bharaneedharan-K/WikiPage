@@ -1,0 +1,150 @@
+.faculty-container {
+  display: flex;
+  flex-direction: column; 
+  height: 100vh;  
+  overflow: hidden; 
+}
+
+.faculty-top-bar {
+  width: 100%;
+  height: 60px;
+  background-color: #081331;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faculty-sidebar-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.faculty-hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+}
+
+.faculty-hamburger::before, .faculty-hamburger::after, .faculty-hamburger div {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.faculty-hamburger::before {
+  top: 0;
+}
+
+.faculty-hamburger div {
+  top: 7px;
+}
+
+.faculty-hamburger::after {
+  bottom: 0;
+}
+
+.faculty-hamburger.active::before {
+  transform: rotate(45deg);
+  top: 7px;
+}
+
+.faculty-hamburger.active div {
+  opacity: 0;
+}
+
+.faculty-hamburger.active::after {
+  transform: rotate(-45deg);
+  bottom: 7px;
+}
+
+.faculty-top-bar-title {
+  flex: 1;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  margin: 0;
+  padding-right: 30px; 
+}
+
+.logout-button {
+  background-color: #f44336; 
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 10px; 
+  margin-right: 45px; 
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; 
+}
+
+.faculty-main-content {
+  display: flex; 
+  flex: 1;
+  overflow: hidden; 
+  transition: margin-left 0.3s;
+  height: calc(100vh - 60px); 
+}
+
+.faculty-sidebar {
+  width: 200px;
+  background-color: #081331;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  height: 100%; 
+  overflow-y: auto;
+}
+
+.faculty-sidebar-nav {
+  margin-top: 20px;
+}
+
+.faculty-sidebar-nav-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.faculty-sidebar-nav-item {
+  margin: 10px 0;
+}
+
+.faculty-sidebar-nav-link {
+  display: block;
+  text-decoration: none;
+  color: #c4c0c0;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.faculty-sidebar-nav-link:hover {
+  background-color: #007bff;
+  color: rgb(181, 177, 177);
+}
+
+.faculty-sidebar-nav-link:active {
+  background-color: #0056b3;
+}
+
+.faculty-dashboard-content {
+  flex: 1;
+  background-color: #081331e3;
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%; 
+}

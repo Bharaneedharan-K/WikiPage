@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
 import './LoginPage.css';
 import logo from './assets/logo.png';
 
 const LoginPage = () => {
   const [error, setError] = useState(null);
+  const navigate = useNavigate();  // Initialize useNavigate hook
 
   // Function to handle Google login
   const login = useGoogleLogin({
@@ -26,7 +28,7 @@ const LoginPage = () => {
         try {
           const emailRes = await axios.post('http://localhost:5000/api/store-email', {
             email: userInfo.email,
-            name: userInfo.name,  // Send the user's name as well
+            name: userInfo.name,
           });
           console.log(emailRes.data); // Success message
         } catch (emailError) {
@@ -39,7 +41,7 @@ const LoginPage = () => {
         const adminEmails = adminRes.data.map(admin => admin.emailId);
 
         if (adminEmails.includes(userInfo.email)) {
-          window.location.href = 'http://localhost:3000/admin/dashboard'; // Redirect to Admin Dashboard
+          navigate('/admin/dashboard');  // Redirect to Admin Page upon successful login
         } else {
           setError('You are not authorized as an Admin.');
         }
