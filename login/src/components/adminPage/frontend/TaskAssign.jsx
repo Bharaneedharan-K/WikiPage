@@ -3,9 +3,7 @@ import './TaskAssign.css';
 
 const TaskAssign = () => {
   const [formData, setFormData] = useState({
-    department: '',
     faculty: '',
-    subjectId: '',
     dueDate: ''
   });
 
@@ -26,42 +24,19 @@ const TaskAssign = () => {
       <h1>Assign Task</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="department">Department *</label>
-          <input
-            type="text"
-            id="department"
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            placeholder="Enter Department"
-            required
-          />
-        </div>
-
-        <div className="form-group">
           <label htmlFor="faculty">Faculty *</label>
-          <input
-            type="text"
+          <select
             id="faculty"
             name="faculty"
             value={formData.faculty}
             onChange={handleChange}
-            placeholder="Enter Faculty"
             required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="subjectId">Subject ID *</label>
-          <input
-            type="text"
-            id="subjectId"
-            name="subjectId"
-            value={formData.subjectId}
-            onChange={handleChange}
-            placeholder="Enter Subject ID"
-            required
-          />
+          >
+            <option value="" disabled>Select Faculty</option>
+            <option value="Faculty 1">Faculty 1</option>
+            <option value="Faculty 2">Faculty 2</option>
+            <option value="Faculty 3">Faculty 3</option>
+          </select>
         </div>
 
         <div className="form-group">

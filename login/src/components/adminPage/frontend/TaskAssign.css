@@ -1,28 +1,27 @@
-
 .task-assign-container {
   margin: 0 auto;
   padding: 40px;
-  width: 100%; 
-  max-width: 1200px; 
-  background-color: rgba(42, 42, 42, 0); 
+  width: 100%;
+  max-width: 1200px;
+  background-color: rgba(42, 42, 42, 0);
   border-radius: 10px;
   color: #ffffff;
   position: relative;
 }
 
 .task-assign-container h1 {
-  text-align: left; 
+  text-align: left;
   margin-bottom: 50px;
   margin-top: 10px;
   color: #ffffff;
-  font-size: 32px; 
+  font-size: 32px;
 }
 
 .task-assign-container form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; 
+  width: 100%;
 }
 
 .task-assign-container .form-group {
@@ -35,31 +34,53 @@
 .task-assign-container label {
   flex-basis: 30%;
   font-weight: 600;
-  text-align: right; 
-  margin-right: 10px; 
-  width: 500px; 
+  text-align: right;
+  margin-right: 10px;
 }
 
 .task-assign-container input[type="text"],
-.task-assign-container input[type="date"] {
-  flex-grow: 1; 
+.task-assign-container input[type="date"],
+.task-assign-container select {
+  flex-grow: 1;
   padding: 12px;
+  width: 600px; /* Increased width */
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 16px;
   background-color: #1a1a1a;
   color: #ffffff;
+  position: relative;
+  appearance: none; /* Hides default arrow for dropdown */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" height="24" width="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow in white */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* Position the arrow to the right */
+  background-size: 16px 16px; /* Size of the arrow */
 }
 
-.task-assign-container input[type="text"]::placeholder,
-.task-assign-container input[type="date"]::placeholder {
-  color: #a9a9a9;
+/* Custom calendar icon - white color */
+.task-assign-container input[type="date"]::before {
+  content: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-5h-5v-2h5v2zm3 0h-1v-2h1v2z"/></svg>');
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Modify the default calendar picker */
+.task-assign-container input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Optionally hide the native calendar icon */
+  pointer-events: all; /* Allow interaction */
 }
 
 .task-assign-container .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .task-assign-container .assign-task {
