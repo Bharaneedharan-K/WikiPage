@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo'); // For storing sessions in MongoDB
 
 dotenv.config(); // Load .env file
 
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
