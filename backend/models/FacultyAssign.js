@@ -1,5 +1,3 @@
-// models/facultyAssign.js
-
 const mongoose = require('mongoose');
 
 // Define the Faculty Assignment Schema
@@ -14,8 +12,6 @@ const facultyAssignSchema = new mongoose.Schema({
   subjectCode: { type: String, required: true },
 });
 
-// Create a model from the schema
-const FacultyAssign = mongoose.model('FacultyAssign', facultyAssignSchema);
-
-// Export the model
+// Create and export the model with collection name 'facultyassign'
+const FacultyAssign = mongoose.model('FacultyAssign', facultyAssignSchema, 'facultyassign');
 module.exports = FacultyAssign;

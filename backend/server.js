@@ -40,8 +40,6 @@ app.use(session({
 }));
 
 // Admin-related routes
-
-// API to fetch admin emails
 app.get('/api/admin', async (req, res) => {
   try {
     const admins = await Admin.find({});
@@ -52,7 +50,6 @@ app.get('/api/admin', async (req, res) => {
   }
 });
 
-// API to store logged-in email and name in session
 app.post('/api/store-email', async (req, res) => {
   const { email, name } = req.body;
 
@@ -75,7 +72,6 @@ app.post('/api/store-email', async (req, res) => {
   }
 });
 
-// API to get session email and name
 app.get('/api/get-email', (req, res) => {
   const email = req.session.email;
   const name = req.session.name;
@@ -87,7 +83,6 @@ app.get('/api/get-email', (req, res) => {
   res.json({ email, name });
 });
 
-// API to logout
 app.post('/api/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -99,33 +94,8 @@ app.post('/api/logout', (req, res) => {
 });
 
 // Faculty Assignment-related routes
-
-// Define a Faculty Assignment Schema
-const facultyAssignSchema = new mongoose.Schema({
-  department: { type: String, required: true },
-  facultyId: { type: String, required: true },
-  facultyName: { type: String, required: true },
-  facultyEmail: { type: String, required: true },
-  semester: { type: String, required: true },
-  batchYear: { type: String, required: true },
-  subjectName: { type: String, required: true },
-  subjectCode: { type: String, required: true },
-});
-
-// Create a model based on the schema with collection name 'facultyassign'
-const FacultyAssign = mongoose.model('FacultyAssign', facultyAssignSchema, 'facultyassign');
-
-// POST route to create a new faculty assignment
-app.post('/api/faculty', async (req, res) => {
-  try {
-    const newAssignment = new FacultyAssign(req.body);
-    const savedAssignment = await newAssignment.save();
-    res.status(201).json(savedAssignment);
-  } catch (error) {
-    console.error('Error saving faculty assignment:', error);
-    res.status(500).json({ error: 'Failed to save assignment' });
-  }
-});
+const facultyAssignRoutes = require('./routes/facultyAssign');
+app.use('/api/faculty', facultyAssignRoutes);
 
 // Start the server
 app.listen(PORT, () => {
